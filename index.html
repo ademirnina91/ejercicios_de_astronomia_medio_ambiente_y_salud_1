@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ejercicios de ejemplos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS en carpeta css/ -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- JS en carpeta js/ con defer para que el DOM esté listo -->
+  <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="logo">trabajo de ejercicios de ejemplo</div>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+  <ul class="nav-links">
+    <li><a onclick="mostrar('inicio')">Inicio</a></li>
+
+    <li class="dropdown">
+      <a class="drop-btn">Astronomía ▾</a>
+      <ul class="submenu">
+        <li onclick="mostrar('astro1')">Ejercicio 1</li>
+        <li onclick="mostrar('astro2')">Ejercicio 2</li>
+        <li onclick="mostrar('astro3')">Ejercicio 3</li>
+        <li onclick="mostrar('astro4')">Ejercicio 4</li>
+        <li onclick="mostrar('astro5')">Ejercicio 5</li>
+      </ul>
+    </li>
+
+    <li class="dropdown">
+      <a class="drop-btn">Salud ▾</a>
+      <ul class="submenu">
+        <li onclick="mostrar('salud1')">Ejercicio 1</li>
+        <li onclick="mostrar('salud2')">Ejercicio 2</li>
+        <li onclick="mostrar('salud3')">Ejercicio 3</li>
+        <li onclick="mostrar('salud4')">Ejercicio 4</li>
+        <li onclick="mostrar('salud5')">Ejercicio 5</li>
+      </ul>
+    </li>
+
+    <li class="dropdown">
+      <a class="drop-btn">Medio Ambiente ▾</a>
+      <ul class="submenu">
+        <li onclick="mostrar('medio1')">Ejercicio 1</li>
+        <li onclick="mostrar('medio2')">Ejercicio 2</li>
+        <li onclick="mostrar('medio3')">Ejercicio 3</li>
+        <li onclick="mostrar('medio4')">Ejercicio 4</li>
+        <li onclick="mostrar('medio5')">Ejercicio 5</li>
+      </ul>
+    </li>
+
+  </ul>
+</nav>
+
+<!-- SECCIONES -->
+
+<!-- INICIO -->
+<div id="inicio" class="seccion" style="display:block;">
+  <h1>menu de ejercicios de astronomia , salud y medio ambiente</h1>
+  <p>menu de ejemplo para la practica del domingo</p>
+</div>
+
+<!-- ASTRONOMÍA EJERCICIO 1 -->
+<div id="astro1" class="seccion">
+  <h2>Astronomía - Ejercicio 1</h2>
+  <div class="card">
+    <label>Magnitud:</label><br>
+    <input id="mag" /><br>
+    <button onclick="calcularBrillo()">Calcular</button>
+    <p id="resMag"></p>
+  </div>
+</div>
+
+<!-- ASTRONOMÍA EJERCICIO 2 -->
+<div id="astro2" class="seccion">
+  <h2>Astronomía - Ejercicio 2</h2>
+  <div class="card">
+    <label>Distancia (millones km):</label><br>
+    <input id="distA2" /><br>
+    <button onclick="agregarDistanciaA2()">Agregar</button>
+    <button onclick="promedioA2()">Calcular promedio</button>
+    <p id="listaA2"></p>
+    <p id="resA2"></p>
+  </div>
+</div>
+
+<!-- ASTRONOMÍA EJERCICIO 3 -->
+<div id="astro3" class="seccion">
+  <h2>Astronomía - Ejercicio 3</h2>
+  <div class="card">
+    <label>Diámetro del cráter (km):</label><br>
+    <input id="diamA3" /><br>
+    <button onclick="agregarCraterA3()">Agregar</button>
+    <p id="listaA3"></p>
+    <p id="resA3"></p>
+  </div>
+</div>
+
+<!-- ASTRONOMÍA EJERCICIO 4 -->
+<div id="astro4" class="seccion">
+  <h2>Astronomía - Ejercicio 4</h2>
+  <div class="card">
+    <label>Código (1-5):</label><br>
+    <input id="codA4" /><br>
+    <button onclick="identificarA4()">Identificar</button>
+    <p id="resA4"></p>
+  </div>
+</div>
+
+<!-- ASTRONOMÍA EJERCICIO 5 -->
+<div id="astro5" class="seccion">
+  <h2>Astronomía - Ejercicio 5</h2>
+  <div class="card">
+    <label>Nivel de luz (lux):</label><br>
+    <input id="luxA5" /><br>
+    <button onclick="agregarLuxA5()">Agregar</button>
+    <p id="listaA5"></p>
+    <p id="resA5"></p>
+  </div>
+</div>
+
+<!-- SALUD EJERCICIO 1 -->
+<div id="salud1" class="seccion">
+  <h2>Salud - Ejercicio 1</h2>
+  <div class="card">
+    <label>Presión sistólica:</label><br>
+    <input id="sis1" /><br>
+    <label>Presión diastólica:</label><br>
+    <input id="dia1" /><br>
+    <button onclick="clasificarPresion()">Clasificar</button>
+    <p id="resSal1"></p>
+  </div>
+</div>
+
+<!-- SALUD EJERCICIO 2 -->
+<div id="salud2" class="seccion">
+  <h2>Salud - Ejercicio 2</h2>
+  <div class="card">
+    <label>Número de pacientes:</label><br>
+    <input id="cantS2" /><br>
+    <label>Temperatura (°C):</label><br>
+    <input id="tempS2" />
+    <button onclick="agregarTempS2()">Agregar</button>
+    <button onclick="promedioS2()">Calcular promedio</button>
+    <p id="listaS2"></p>
+    <p id="resS2"></p>
+  </div>
+</div>
+
+<!-- SALUD EJERCICIO 3 -->
+<div id="salud3" class="seccion">
+  <h2>Salud - Ejercicio 3</h2>
+  <div class="card">
+    <label>Temperatura (0 para terminar):</label><br>
+    <input id="tempS3" /><br>
+    <button onclick="agregarTempS3()">Agregar</button>
+    <p id="listaS3"></p>
+    <p id="resS3"></p>
+  </div>
+</div>
+
+<!-- SALUD EJERCICIO 4 -->
+<div id="salud4" class="seccion">
+  <h2>Salud - Ejercicio 4</h2>
+  <div class="card">
+    <label>Código TRIAGE (1-4):</label><br>
+    <input id="codS4" /><br>
+    <button onclick="triageS4()">Mostrar</button>
+    <p id="resS4"></p>
+  </div>
+</div>
+
+<!-- SALUD EJERCICIO 5 -->
+<div id="salud5" class="seccion">
+  <h2>Salud - Ejercicio 5</h2>
+  <div class="card">
+    <label>Saturación SpO2:</label><br>
+    <input id="spo5" /><br>
+    <button onclick="agregarSpo5()">Agregar</button>
+    <p id="listaS5"></p>
+    <p id="resS5"></p>
+  </div>
+</div>
+
+<!-- MEDIO AMBIENTE EJERCICIO 1 -->
+<div id="medio1" class="seccion">
+  <h2>Medio Ambiente - Ejercicio 1</h2>
+  <div class="card">
+    <label>AQI:</label><br>
+    <input id="aqi1" /><br>
+    <button onclick="clasificarAQI()">Clasificar</button>
+    <p id="resM1"></p>
+  </div>
+</div>
+
+<!-- MEDIO AMBIENTE EJERCICIO 2 -->
+<div id="medio2" class="seccion">
+  <h2>Medio Ambiente - Ejercicio 2</h2>
+  <div class="card">
+    <label>Medición de ruido (dB):</label><br>
+    <input id="noise2" /><br>
+    <button onclick="agregarNoise2()">Agregar</button>
+    <button onclick="promedioNoise2()">Promedio</button>
+    <p id="listaM2"></p>
+    <p id="resM2"></p>
+  </div>
+</div>
+
+<!-- MEDIO AMBIENTE EJERCICIO 3 -->
+<div id="medio3" class="seccion">
+  <h2>Medio Ambiente - Ejercicio 3</h2>
+  <div class="card">
+    <label>Temperatura (0 para terminar):</label><br>
+    <input id="tempM3" /><br>
+    <button onclick="agregarTempM3()">Agregar</button>
+    <p id="listaM3"></p>
+    <p id="resM3"></p>
+  </div>
+</div>
+
+<!-- MEDIO AMBIENTE EJERCICIO 4 -->
+<div id="medio4" class="seccion">
+  <h2>Medio Ambiente - Ejercicio 4</h2>
+  <div class="card">
+    <label>Código residuo (1-4):</label><br>
+    <input id="codM4" /><br>
+    <button onclick="residuoM4()">Identificar</button>
+    <p id="resM4"></p>
+  </div>
+</div>
+
+<!-- MEDIO AMBIENTE EJERCICIO 5 -->
+<div id="medio5" class="seccion">
+  <h2>Medio Ambiente - Ejercicio 5</h2>
+  <div class="card">
+    <label>Nivel del río (m):</label><br>
+    <input id="nivel5" /><br>
+    <button onclick="agregarNivel5()">Agregar</button>
+    <p id="listaM5"></p>
+    <p id="resM5"></p>
+  </div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+

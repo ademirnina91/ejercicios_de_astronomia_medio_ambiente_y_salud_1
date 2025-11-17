@@ -1,0 +1,150 @@
+## css/styles.css
+
+```css
+/* GENERAL */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  background: #eef1f5;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+/* NAVBAR */
+.navbar {
+  background: blue;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.hamburger {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* LINKS DESKTOP */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a,
+.nav-links li {
+  color: white;
+  cursor: pointer;
+}
+
+.nav-links a:hover {
+  color: #ffcc00;
+}
+
+/* SUBMENÚ */
+.submenu {
+  display: none;
+  background: red;
+  position: absolute;
+  padding: 10px;
+  min-width: 160px;
+  border-radius: 6px;
+  top: 30px;
+}
+
+.submenu li {
+  padding: 8px;
+  color: white;
+}
+
+.submenu li:hover {
+  background: #444;
+}
+
+.dropdown.open .submenu {
+  display: block;
+}
+
+/* SECCIONES */
+.seccion {
+  display: none;
+  padding: 20px;
+}
+
+/* TARJETAS */
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  max-width: 380px;
+  margin: auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  border: none;
+  background: #1b74e4;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+button:hover {
+  background: #155cbc;
+}
+
+/* ---------------- RESPONSIVE ----------------- */
+
+@media (max-width: 768px) {
+  
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #111;
+    margin-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .nav-links li {
+    padding: 10px 20px;
+  }
+
+  .dropdown:hover .submenu {
+    display: none;
+  }
+
+  /* Submenú para móviles (táctil) */
+  .dropdown.open .submenu {
+    display: block;
+    position: relative;
+  }
+}
+```
+
+---
